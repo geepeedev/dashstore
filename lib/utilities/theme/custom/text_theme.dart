@@ -7,7 +7,7 @@ class DashTextTheme {
 
   static TextTheme lightTextTheme = TextTheme(
     headlineLarge: GoogleFonts.nunito().copyWith(
-      color: DashColors.textLight,
+      color: DashColors.textDark,
       fontSize: 32,
       fontWeight: FontWeight.bold,
     ),
@@ -16,9 +16,17 @@ class DashTextTheme {
       fontSize: 28,
       fontWeight: FontWeight.w800,
     ),
-    titleLarge: GoogleFonts.nunito().copyWith(
-      color: DashColors.textLight,
+    headlineSmall: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textDark,
+      fontWeight: FontWeight.w700,
+    ),
+    titleLarge: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textDark,
       fontSize: 16,
+      fontWeight: FontWeight.w600,
+    ),
+    titleSmall: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textDark,
       fontWeight: FontWeight.w600,
     ),
     bodyLarge: GoogleFonts.montserrat().copyWith(
@@ -50,16 +58,29 @@ class DashTextTheme {
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    headlineLarge: TextStyle(color: Colors.white, fontSize: 16),
-    titleLarge: TextStyle(
-      color: Colors.white,
-      fontSize: 24,
+    headlineLarge: GoogleFonts.nunito().copyWith(
+      color: DashColors.textLight,
+      fontSize: 32,
       fontWeight: FontWeight.bold,
     ),
+
     headlineMedium: GoogleFonts.nunito().copyWith(
       color: DashColors.textLight,
       fontSize: 28,
       fontWeight: FontWeight.w800,
+    ),
+    headlineSmall: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textLight,
+      fontWeight: FontWeight.w700,
+    ),
+    titleLarge: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textLight,
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+    ),
+    titleSmall: GoogleFonts.montserrat().copyWith(
+      color: DashColors.textLight,
+      fontWeight: FontWeight.w600,
     ),
     bodyLarge: GoogleFonts.montserrat().copyWith(
       color: DashColors.textLight,

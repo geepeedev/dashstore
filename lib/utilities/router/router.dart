@@ -1,3 +1,5 @@
+import 'package:dashstore/common/cubit/navigation_menu_cubit.dart';
+import 'package:dashstore/common/widget/navigation/navigation_menu.dart';
 import 'package:dashstore/feature/auth/bloc/onboarding%20cubit/onboarding_cubit.dart';
 import 'package:dashstore/feature/auth/presentation/screen/forget_password_screen.dart';
 import 'package:dashstore/feature/auth/presentation/screen/login_screen.dart';
@@ -27,6 +29,14 @@ class DashRouter {
         return MaterialPageRoute(builder: (_) => VerifyEmailScreen());
       case ForgetPasswordScreen.route:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+      case NavigationMenu.route:
+        return MaterialPageRoute(
+          builder:
+              (BuildContext context) => BlocProvider(
+                create: (context) => NavigationMenuCubit(),
+                child: NavigationMenu(),
+              ),
+        );
       default:
         return MaterialPageRoute(
           builder:

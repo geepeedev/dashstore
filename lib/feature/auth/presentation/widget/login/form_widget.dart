@@ -1,3 +1,4 @@
+import 'package:dashstore/common/widget/navigation/navigation_menu.dart';
 import 'package:dashstore/feature/auth/presentation/screen/forget_password_screen.dart';
 import 'package:dashstore/feature/auth/presentation/screen/sign_up_screen.dart';
 import 'package:dashstore/utilities/constants/colors.dart';
@@ -68,7 +69,12 @@ class FormWidget extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  NavigationMenu.route,
+                  (Route<dynamic> route) => false,
+                );
+              },
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
                   DashColors.primary.withAlpha(150),
