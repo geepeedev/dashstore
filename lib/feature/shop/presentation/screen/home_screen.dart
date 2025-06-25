@@ -51,7 +51,12 @@ class HomeScreen extends StatelessWidget {
                   SearchbarWidget(),
                   SizedBox(height: DashSizes.defaultSpaceSection),
                   // categories section header
-                  DashSectionHeaderWidget(text: 'Popular Categories'),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: DashSizes.defaultSpace,
+                    ),
+                    child: DashSectionHeaderWidget(text: 'Popular Categories'),
+                  ),
                   SizedBox(height: DashSizes.defaultSpaceItem),
                   // categories list
                   SizedBox(
@@ -84,7 +89,10 @@ class HomeScreen extends StatelessWidget {
               ),
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
-                return ProductCardVerticalWidget();
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: DashSizes.sm),
+                  child: ProductCardVerticalWidget(),
+                );
               },
             ),
           ],

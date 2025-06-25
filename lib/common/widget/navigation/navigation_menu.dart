@@ -1,5 +1,7 @@
 import 'package:dashstore/common/cubit/navigation_menu_cubit.dart';
 import 'package:dashstore/feature/shop/presentation/screen/home_screen.dart';
+import 'package:dashstore/feature/shop/presentation/screen/store_screen.dart';
+import 'package:dashstore/feature/shop/presentation/screen/wish_list_screen.dart';
 import 'package:dashstore/utilities/constants/colors.dart';
 import 'package:dashstore/utilities/constants/sizes.dart';
 import 'package:dashstore/utilities/helper/dash_helper.dart';
@@ -27,8 +29,8 @@ class NavigationMenu extends StatelessWidget {
               child:
                   [
                     HomeScreen(),
-                    Container(color: Colors.blue),
-                    Container(color: Colors.green),
+                    StoreScreen(),
+                    WishListScreen(),
                     Container(color: Colors.orange),
                   ][state],
             ),

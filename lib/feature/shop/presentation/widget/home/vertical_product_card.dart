@@ -1,5 +1,6 @@
 import 'package:dashstore/common/widget/icon/wish_list_icon.dart';
 import 'package:dashstore/utilities/constants/colors.dart';
+import 'package:dashstore/utilities/constants/enums.dart';
 import 'package:dashstore/utilities/constants/rive_string.dart';
 import 'package:dashstore/utilities/constants/sizes.dart';
 import 'package:dashstore/utilities/helper/dash_helper.dart';
@@ -14,12 +15,12 @@ class ProductCardVerticalWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180,
-      padding: EdgeInsets.only(top: 2, right: 2, left: 2, bottom: 0),
+      padding: EdgeInsets.only(top: 1, right: 0, left: 0, bottom: 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(DashSizes.cardRadiusLg),
         color:
             DashHelper.isDarkMode(context)
-                ? DashColors.neutralDark
+                ? const Color.fromARGB(255, 73, 73, 73)
                 : DashColors.neutralSoft,
       ),
       child: Column(
@@ -94,19 +95,7 @@ class ProductCardVerticalWidget extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
                 SizedBox(height: DashSizes.defaultSpaceItem / 2),
-                Row(
-                  children: [
-                    Text(
-                      "Nike",
-                      style: Theme.of(context).textTheme.labelMedium,
-                    ),
-                    Icon(
-                      IconsaxPlusBold.verify,
-                      size: DashSizes.iconSm,
-                      color: DashColors.primary,
-                    ),
-                  ],
-                ),
+                BrandTitleAndVerificationWIdget(),
 
                 // price\
               ],
@@ -144,6 +133,39 @@ class ProductCardVerticalWidget extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class BrandTitleAndVerificationWIdget extends StatelessWidget {
+  const BrandTitleAndVerificationWIdget({
+    super.key,
+    this.brandName = "Nike",
+    this.brandTextSize = BrandTextSize.medium,
+  });
+  final String brandName;
+  final BrandTextSize brandTextSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          brandName,
+          style: switch (brandTextSize) {
+            BrandTextSize.small => Theme.of(context).textTheme.labelSmall,
+
+            BrandTextSize.medium => Theme.of(context).textTheme.labelMedium,
+
+            BrandTextSize.large => Theme.of(context).textTheme.titleLarge,
+          },
+        ),
+        Icon(
+          IconsaxPlusBold.verify,
+          size: DashSizes.iconSm,
+          color: DashColors.primary,
+        ),
+      ],
     );
   }
 }

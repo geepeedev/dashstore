@@ -1,5 +1,5 @@
 import 'package:dashstore/utilities/constants/colors.dart';
-import 'package:dashstore/utilities/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 
 class DashSectionHeaderWidget extends StatelessWidget {
@@ -17,30 +17,27 @@ class DashSectionHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: DashSizes.defaultSpace),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(text, style: Theme.of(context).textTheme.headlineSmall),
-              if (showTextButton)
-                TextButton(
-                  style: ButtonStyle(
-                    foregroundColor: WidgetStatePropertyAll(DashColors.primary),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    buttonTitle,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(text, style: Theme.of(context).textTheme.headlineSmall),
+            if (showTextButton)
+              TextButton(
+                style: ButtonStyle(
+                  foregroundColor: WidgetStatePropertyAll(DashColors.primary),
                 ),
-            ],
-          ),
-        ],
-      ),
+                onPressed: () {},
+                child: Text(
+                  buttonTitle,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+          ],
+        ),
+      ],
     );
   }
 }

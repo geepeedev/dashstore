@@ -24,19 +24,15 @@ class DashHomeHeaderWidget extends StatelessWidget {
               isDark ? DashColors.secondary : DashColors.primary.withAlpha(100),
           child: Stack(
             children: [
-              Positioned.fill(
-                child: RiveAnimation.asset(
-                  riveHomeBackground,
-                  fit: BoxFit.contain,
-                  alignment: Alignment.center,
-                ),
+              RiveAnimation.asset(
+                riveHomeBackground,
+                fit: BoxFit.contain,
+                alignment: Alignment.center,
               ),
               Positioned.fill(
-                child: RepaintBoundary(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                    child: child,
-                  ),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                  child: child,
                 ),
               ),
             ],
